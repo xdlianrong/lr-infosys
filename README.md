@@ -20,3 +20,9 @@
 - 10.企业资质与荣誉：资质证书、获奖证书的展示
 - 11.财务报表：年报、月报（功能选项：上传、查阅）
 - 12.通知公告：节假日放假安排，或公司召开会议安排（功能选项：发布通知、查看）
+
+## 注意事项
+- 修改列的编码
+```
+  alter table table change column column type character set utf8 collate utf8_unicode_ci not null default '';
+```

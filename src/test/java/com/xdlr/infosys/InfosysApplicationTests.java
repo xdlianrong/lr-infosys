@@ -5,9 +5,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class InfosysApplicationTests {
-
 	@Test
-	void contextLoads() {
+	public void DBTest(){
+
 	}
 
 }
