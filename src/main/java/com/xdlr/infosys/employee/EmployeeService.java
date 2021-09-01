@@ -1,23 +1,20 @@
-package com.xdlr.infosys.register;
+package com.xdlr.infosys.employee;
 
 import com.xdlr.infosys.model.Employee;
 import com.xdlr.infosys.repo.EmployeeRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 
-
 @Service
-public class RegisterService {
-    Logger logger = LoggerFactory.getLogger(RegisterService.class);
+public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
-    public boolean registerNewEmployee( String name, String sex,
-                                         String phone, String idCardNumber,
+    public Employee registerNewEmployee( String name, String sex,
+                                        String phone, String idCardNumber,
                                         String department,
-                                         String position, String job,
+                                        String position, String job,
                                         String entryTime){
         String password = idCardNumber.substring(12);
 
@@ -31,9 +28,6 @@ public class RegisterService {
 
         Employee employee = new Employee(name, password, idCardNumber, phone,
                 sex, job, department, position,birthday, entry);
-        employeeRepository.save(employee);
-
-        return true;
+        return employeeRepository.save(employee);
     }
-
 }
