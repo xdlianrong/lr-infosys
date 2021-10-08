@@ -11,11 +11,8 @@ import java.time.LocalDate;
 public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
-    public Employee registerNewEmployee( String name, String sex,
-                                        String phone, String idCardNumber,
-                                        String department,
-                                        String position, String job,
-                                        String entryTime){
+    public Employee registerNewEmployee( String name, String sex, String phone, String idCardNumber, String department,
+                                        String position, String job, String entryTime){
         String password = idCardNumber.substring(12);
 
         LocalDate birthday = LocalDate.of(Integer.parseInt(idCardNumber.substring(6,10)),
@@ -29,5 +26,12 @@ public class EmployeeService {
         Employee employee = new Employee(name, password, idCardNumber, phone,
                 sex, job, department, position,birthday, entry);
         return employeeRepository.save(employee);
+    }
+
+    public Employee login(Long id, String password){
+        if(!employeeRepository.existsById(id)) return null;
+        Employee employee = employeeRepository.findFirstById(id);
+        if(employee.getPassword().equals(password)) return employee;
+        return null;
     }
 }

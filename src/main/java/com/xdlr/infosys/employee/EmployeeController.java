@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -44,6 +45,12 @@ public class EmployeeController {
         Employee employee = employeeRepository.findFirstById(Long.parseLong(id));
         employee.setDeleted(true);
         return ResponseEntity.ok().body(employee);
+    }
+
+    @PostMapping("/employee/login")
+    public ModelAndView login(String id, String password){
+        if(employeeService.login(new Long(id), password) != null) return new ModelAndView("index");
+        else return new ModelAndView("error");
     }
 
 }
