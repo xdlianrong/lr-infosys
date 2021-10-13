@@ -144,7 +144,7 @@
             <div class="row">
                 <div class="col-3"></div>
                 <div class="flex-column col-6">
-                    <form role="form" action="#" id="form" method="post">
+                    <form role="form" action="/api/v0/employees" id="form" method="post">
                         <h2>Register New Employee</h2>
                         <div class="form-group row">
                             <div class="col-2">
@@ -225,7 +225,6 @@
                             <div class="col-10">
                                 <input id="identityNumber" type="text" class="form-control" required>
                             </div>
-
                         </div>
                         <div class="form-group row">
                             <div class="col-2">
@@ -236,6 +235,9 @@
                             <div class="col-10">
                                 <input id="entryTime" type="date" class="form-control" required>
                             </div>
+                        </div>
+                        <div class="form-group row justify-content-center">
+                            <button type="submit" class="btn btn-primary">确认注册</button>
                         </div>
                     </form>
                 </div>

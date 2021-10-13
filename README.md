@@ -21,8 +21,17 @@
 - 11.财务报表：年报、月报（功能选项：上传、查阅）
 - 12.通知公告：节假日放假安排，或公司召开会议安排（功能选项：发布通知、查看）
 
+## 未完成的事项
+- 完成注册的后端功能
+- 完成前端页面的各种检查
+- 完成register页面和home页面的sidebars一致的问题
+- 根据register页面和home页面sidebars页面不一致的问题我们是不是可以考虑推出不同主题
+
 ## 注意事项
 - 修改列的编码
 ```
   alter table table change column column type character set utf8 collate utf8_unicode_ci not null default '';
+  
+  alter table employee change position position varchar(255) character set
+utf8 collate utf8_unicode_ci not null default '';
 ```

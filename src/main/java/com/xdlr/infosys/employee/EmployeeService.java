@@ -2,28 +2,34 @@ package com.xdlr.infosys.employee;
 
 import com.xdlr.infosys.model.Employee;
 import com.xdlr.infosys.repo.EmployeeRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Service
+@ResponseBody
 public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
-    public Employee registerNewEmployee( String name, String sex, String phone, String idCardNumber, String department,
-                                        String position, String job, String entryTime){
-        String password = idCardNumber.substring(12);
+    Logger logger = LoggerFactory.getLogger(EmployeeService.class);
+    public Employee registerNewEmployee(String name, String phone, String email, String sex, String job, String department, String position, String identityNumber, String entryTime){
 
-        LocalDate birthday = LocalDate.of(Integer.parseInt(idCardNumber.substring(6,10)),
-                Integer.parseInt(idCardNumber.substring(10,12)),
-                Integer.parseInt(idCardNumber.substring(12,14)));
+        String password = identityNumber.substring(12);
+
+        LocalDate birthday = LocalDate.of(Integer.parseInt(identityNumber.substring(6,10)),
+                Integer.parseInt(identityNumber.substring(10,12)),
+                Integer.parseInt(identityNumber.substring(12,14)));
 
         LocalDate entry = LocalDate.of(Integer.parseInt(entryTime.substring(0,4)),
                 Integer.parseInt(entryTime.substring(5,7)),
                 Integer.parseInt(entryTime.substring(8,10)));
 
-        Employee employee = new Employee(name, password, idCardNumber, phone,
+        Employee employee = new Employee(name,email, password, identityNumber, phone,
                 sex, job, department, position,birthday, entry);
         return employeeRepository.save(employee);
     }

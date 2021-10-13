@@ -9,16 +9,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
+@ResponseBody
 @RequestMapping("/api/v0")
 public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
     @Autowired
     private EmployeeService employeeService;
-    Logger logger = LoggerFactory.getLogger(Employee.class);
+    Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
     @GetMapping("/employees")
     public List<Employee> getAllEmployees(){
@@ -26,12 +28,14 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(@RequestParam String name, @RequestParam String sex,
-                                   @RequestParam String phone, @RequestParam String idCardNumber,
-                                   @RequestParam String department, @RequestParam String position,
-                                   @RequestParam String job, @RequestParam String entryTime){
+    public Employee createEmployee(String name, String phone,
+                                   String email, String sex,
+                                   String job, String department,
+                                   String position, String identityNumber,
+                                   String entryTime){
         //why i return this object to front end
-        return employeeService.registerNewEmployee(name, sex, phone, idCardNumber, department, position, job, entryTime);
+
+        return employeeService.registerNewEmployee(name, phone, email, sex, job, department, position,identityNumber, entryTime);
     }
 
     @GetMapping("/employees/{id}")
