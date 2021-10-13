@@ -7,8 +7,9 @@ import java.time.LocalDate;
 public class Employee extends MyModel{
     private String name;
     private String password;
-    private String idCardNumber;
+    private String id;
     private String phone;
+    private String email;
     private String sex;
     private String job;
     private String department;
@@ -19,10 +20,10 @@ public class Employee extends MyModel{
 
     public Employee() {}
 
-    public Employee(String name, String password, String idCardNumber, String phone, String sex, String job, String department, String position, LocalDate birthday, LocalDate entryTime) {
+    public Employee(String name, String password, String id, String phone, String sex, String job, String department, String position, LocalDate birthday, LocalDate entryTime) {
         this.name = name;
         this.password = password;
-        this.idCardNumber = idCardNumber;
+        this.id = id;
         this.phone = phone;
         this.sex = sex;
         this.job = job;
@@ -44,8 +45,8 @@ public class Employee extends MyModel{
         return resignationTime;
     }
 
-    public void setIdCardNumber(String idCardNumber) {
-        this.idCardNumber = idCardNumber;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setPhone(String phone) {
@@ -68,8 +69,8 @@ public class Employee extends MyModel{
         this.position = position;
     }
 
-    public String getIdCardNumber() {
-        return idCardNumber;
+    public String getId() {
+        return id;
     }
 
     public String getPhone() {
@@ -98,6 +99,14 @@ public class Employee extends MyModel{
 
     public String getPassword() {
         return password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setName(String name) {
