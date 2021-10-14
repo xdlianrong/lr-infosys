@@ -33,8 +33,8 @@ public class EmployeeController {
                                    String job, String department,
                                    String position, String identityNumber,
                                    String entryTime){
+        logger.debug("name is " + name);
         //why i return this object to front end
-
         return employeeService.registerNewEmployee(name, phone, email, sex, job, department, position,identityNumber, entryTime);
     }
 
