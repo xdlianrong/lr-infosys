@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Service
 @ResponseBody
@@ -18,7 +17,6 @@ public class EmployeeService {
     EmployeeRepository employeeRepository;
     Logger logger = LoggerFactory.getLogger(EmployeeService.class);
     public Employee registerNewEmployee(String name, String phone, String email, String sex, String job, String department, String position, String identityNumber, String entryTime){
-
         String password = identityNumber.substring(12);
 
         LocalDate birthday = LocalDate.of(Integer.parseInt(identityNumber.substring(6,10)),
