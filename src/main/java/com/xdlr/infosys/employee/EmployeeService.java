@@ -59,9 +59,11 @@ public class EmployeeService {
 
         for(int i = 0;i < manageDepartment.size();i++){
             Employee manager;
-            if(i == manageDepartment.size() - 1){
-                manager =  employeeRepository.findEmployeeByPosition("技术部总监");
+            logger.debug("" + i);
+            if(i == 1){
+                manager =  employeeRepository.findEmployeeByPosition("技术总监");
             }else{
+                logger.debug(manageDepartment.get(i));
                 manager = employeeRepository.findEmployeeByDepartment(manageDepartment.get(i));
             }
             Long managerId = manager.getId();

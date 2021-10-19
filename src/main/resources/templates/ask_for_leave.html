@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>西电链融</title>
+    <title>请假服务</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link
@@ -21,33 +21,6 @@
     />
 </head>
 <body>
-<header>
-    <style>
-        .navbar .nav-link {
-            color: #fff !important;
-        }
-    </style>
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block bg-dark" style="z-index: 2000;">
-        <div class="container-fluid">
-            <a class="navbar-brand nav-link" target="_blank" href="https://www.lianrongtech.site/">
-                <strong>西电链融</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
-                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="https://www.lianrongtech.site">首页</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
 <main>
     <!--Add svg first-->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -137,103 +110,64 @@
                 </div>
             </div>
         </div>
-        <!--Register Form-->
+
         <div class="col-9 justify-content-center">
             <div class="row">
-                <div class="col-3"></div>
-                <div class="flex-column col-6">
-                    <form role="form" id="form" action="/api/v0/employees" method="post">
-                        <h2>Register New Employee</h2>
+                <div class="col-1"></div>
+                <div class="flex-column col-8">
+                    <form role="form" id="form" action="" method="post">
+                        <h2 align="center">请假表</h2>
                         <div class="form-group row">
                             <div class="col-2">
-                                <label for="name" class="text-info col-form-label">
-                                    姓&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp名<font class="text-danger">*</font>
+                                <label for="leaveType" class="text-info col-form-label">
+                                    请假类型<font class="text-danger">*</font>
                                 </label>
                             </div>
                             <div class="col-10">
-                                <input name="name" id="name" type="text" class="form-control" required>
+                                <input name="leaveType" id="leaveType" type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-2">
-                                <label for="phone" class="text-info col-form-label">
-                                    电话号码<font class="text-danger">*</font>
+                                <label  class="text-info col-form-label">
+                                    开始日期<font class="text-danger">*</font>
                                 </label>
                             </div>
-                            <div class="col-10">
-                                <input name="phone" id="phone" type="tel" class="form-control" required>
+                            <div class="col-4">
+                                <input name="startDate" id="startDate" type="date" class="form-control" required>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-4">
+                                <input name="startTime" id="startTime" type="time" class="form-control" required>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2">
+                                <label class="text-info col-form-label">
+                                    截止日期<font class="text-danger">*</font>
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <input name="endDate" id="endDate" type="date" class="form-control" required>
+                            </div>
+                            <div class="col-2"></div>
+                            <div class="col-4">
+                                <input name="endTime" id="endTime" type="time" class="form-control" required>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-2">
-                                <label for="email" class="text-info col-form-label">
-                                    电子邮箱<font class="text-danger">*</font>
+                                <label for="reason" class="text-info col-form-label">
+                                    请假原因<font class="text-danger">*</font>
                                 </label>
                             </div>
                             <div class="col-10">
-                                <input name="email" id="email" type="email" class="form-control" required>
+                                <input name="reason" id="reason" type="text" class="form-control" required
+                                    style="height: 100px">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="sex" class="text-info col-form-label">
-                                    性&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp别<font class="text-danger">*</font>
-                                </label>
-                            </div>
-                            <div class="col-10">
-                                <input name="sex" id="sex" type="text" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="job" class="text-info col-form-label">
-                                    工&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp作<font class="text-danger">*</font>
-                                </label>
-                            </div>
-                            <div class="col-10">
-                                <input name="job" id="job" type="text" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="department" class="text-info col-form-label">
-                                    部&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp门<font class="text-danger">*</font>
-                                </label>
-                            </div>
-                            <div class="col-10">
-                                <input name="department" id="department" type="text" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="position" class="text-info col-form-label">
-                                    职&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp位<font class="text-danger">*</font>
-                                </label>
-                            </div>
-                            <div class="col-10">
-                                <input name="position" id="position" type="text" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="identityNumber" class="text-info col-form-label">
-                                    身份证号<font class="text-danger">*</font>
-                                </label>
-                            </div>
-                            <div class="col-10">
-                                <input name="identityNumber" id="identityNumber" type="text" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-2">
-                                <label for="entryTime" class="text-info col-form-label">
-                                    入职时间<font class="text-danger">*</font>
-                                </label>
-                            </div>
-                            <div class="col-10">
-                                <input name="entryTime" id="entryTime" type="date" class="form-control" required>
-                            </div>
-                        </div>
+                        <p></p>
                         <div class="row justify-content-center">
                             <button type="submit" class="btn btn-primary">确认注册</button>
                         </div>
@@ -243,8 +177,8 @@
             </div>
         </div>
     </div>
-</main>
 
+</main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>

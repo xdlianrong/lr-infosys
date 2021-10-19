@@ -37,6 +37,5 @@
 ```
   alter table table change column column type character set utf8 collate utf8_unicode_ci not null default '';
   
-  alter table employee change position position varchar(255) character set
-utf8 collate utf8_unicode_ci not null default '';
+  alter table employee change position position varchar(255) character set utf8 collate utf8_unicode_ci not null default '';
 ```
