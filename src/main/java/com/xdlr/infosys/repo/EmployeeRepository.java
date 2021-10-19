@@ -9,4 +9,6 @@ public interface EmployeeRepository extends CrudRepository<Employee,Integer> {
     List<Employee> findAll();
     Employee findFirstById(Long id);
     Boolean existsById(Long id);
+    Employee findEmployeeByPosition(String position);
+    Employee findEmployeeByDepartment(String department);
 }

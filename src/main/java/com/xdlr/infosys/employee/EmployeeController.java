@@ -28,14 +28,16 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
-    public Employee createEmployee(String name, String phone,
+    public String createEmployee(String name, String phone,
                                    String email, String sex,
                                    String job, String department,
                                    String position, String identityNumber,
                                    String entryTime){
         logger.debug("name is " + name);
         //why i return this object to front end
-        return employeeService.registerNewEmployee(name, phone, email, sex, job, department, position,identityNumber, entryTime);
+        Employee addedEmployee = employeeService.registerNewEmployee(name, phone, email, sex, job, department, position,identityNumber, entryTime);
+        employeeService.addManage(addedEmployee);
+        return "添加用户完成";
     }
 
     @GetMapping("/employees/{id}")
