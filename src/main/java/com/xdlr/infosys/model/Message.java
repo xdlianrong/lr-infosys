@@ -3,27 +3,27 @@ package com.xdlr.infosys.model;
 import javax.persistence.Entity;
 
 @Entity
-public class Message extends MyModel{
+public class M extends MyModel{
 
     private Long senderId;
     private String senderName;
     private String sendTime;
     private String type;
-    private Long recieverId;
-    private String recieverName;
-    private boolean read = false;
+    private Long receiverId;
+    private String receiverName;
+    private Boolean read = false;
 
     public String getSendTime() {
         return sendTime;
     }
 
-    public Message(Long senderId, String senderName, String sendTime, String type, Long recieverId, String recieverName, boolean read) {
+    public M(Long senderId, String senderName, String sendTime, String type, Long receiverId, String receiverName, boolean read) {
         this.senderId = senderId;
         this.senderName = senderName;
         this.sendTime = sendTime;
         this.type = type;
-        this.recieverId = recieverId;
-        this.recieverName = recieverName;
+        this.receiverId = receiverId;
+        this.receiverName = receiverName;
         this.read = read;
     }
 
@@ -39,7 +39,7 @@ public class Message extends MyModel{
         this.read = read;
     }
 
-    public Message(){}
+    public M(){}
 
     public Long getSenderId() {
         return senderId;
@@ -65,19 +65,19 @@ public class Message extends MyModel{
         this.type = type;
     }
 
-    public Long getRecieverId() {
-        return recieverId;
+    public Long getReceiverId() {
+        return receiverId;
     }
 
-    public void setRecieverId(Long recieverId) {
-        this.recieverId = recieverId;
+    public void setReceiverId(Long receiverId) {
+        this.receiverId = receiverId;
     }
 
-    public String getRecieverName() {
-        return recieverName;
+    public String getReceiverName() {
+        return receiverName;
     }
 
-    public void setRecieverName(String recieverName) {
-        this.recieverName = recieverName;
+    public void setReceiverName(String receiverName) {
+        this.receiverName = receiverName;
     }
 }
