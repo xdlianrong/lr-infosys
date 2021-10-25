@@ -1,7 +1,6 @@
 package com.xdlr.infosys.model;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Manage extends MyModel{
