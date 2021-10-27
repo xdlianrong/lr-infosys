@@ -35,7 +35,7 @@ public class EmployeeController {
         logger.debug("name is " + name);
         //why i return this object to front end
         Employee addedEmployee = employeeService.registerNewEmployee(name, phone, email, sex, job, department, position,identityNumber, entryTime);
-        employeeService.addManage(addedEmployee);
+//        employeeService.addManage(addedEmployee);
         return "添加用户完成";
     }
 
