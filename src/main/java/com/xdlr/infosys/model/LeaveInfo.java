@@ -3,12 +3,11 @@ package com.xdlr.infosys.model;
 import javax.persistence.Entity;
 
 @Entity
-public class Message extends MyModel{
+public class LeaveInfo extends MyModel{
 
     private Long senderId;
     private String senderName;
     private String sendTime;
-    private String type;
     private Long receiverId;
     private String receiverName;
     private Boolean readed = false;
@@ -17,11 +16,10 @@ public class Message extends MyModel{
         return sendTime;
     }
 
-    public Message(Long senderId, String senderName, String sendTime, String type, Long receiverId, String receiverName, boolean readed) {
+    public LeaveInfo(Long senderId, String senderName, String sendTime, Long receiverId, String receiverName, boolean readed) {
         this.senderId = senderId;
         this.senderName = senderName;
         this.sendTime = sendTime;
-        this.type = type;
         this.receiverId = receiverId;
         this.receiverName = receiverName;
         this.readed = readed;
@@ -39,7 +37,7 @@ public class Message extends MyModel{
         this.readed = readed;
     }
 
-    public Message(){}
+    public LeaveInfo(){}
 
     public Long getSenderId() {
         return senderId;
@@ -55,14 +53,6 @@ public class Message extends MyModel{
 
     public void setSenderName(String senderName) {
         this.senderName = senderName;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public Long getReceiverId() {

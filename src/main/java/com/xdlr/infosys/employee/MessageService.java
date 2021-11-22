@@ -1,15 +1,15 @@
 package com.xdlr.infosys.employee;
 
 import com.xdlr.infosys.config.ApplicationContextProvider;
-import com.xdlr.infosys.model.Message;
-import com.xdlr.infosys.repo.MessageRepository;
+import com.xdlr.infosys.model.LeaveInfo;
+import com.xdlr.infosys.repo.LeaveInfoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class MessageService implements Runnable{
-    MessageRepository messageRepository = ApplicationContextProvider.getBean(MessageRepository.class);
+    LeaveInfoRepository leaveInfoRepository = ApplicationContextProvider.getBean(LeaveInfoRepository.class);
     Logger logger = LoggerFactory.getLogger(MessageService.class);
     private Thread t;
     private String threadName;
@@ -20,7 +20,7 @@ public class MessageService implements Runnable{
     @Override
     public void run(){
         while(true){
-            List<Message> list = messageRepository.findByReaded(false);
+            List<LeaveInfo> list = leaveInfoRepository.findByReaded(false);
             for(int i = 0;i < list.size();i++){
 
             }
