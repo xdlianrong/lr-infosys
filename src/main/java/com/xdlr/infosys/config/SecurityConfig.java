@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/login.do")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login","/index")
+                .antMatchers("/login","/index ")
                 .permitAll()
                 .anyRequest()
                 .authenticated();
