@@ -1,9 +1,10 @@
 package com.xdlr.infosys.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Permission extends MyModel{
@@ -14,6 +15,17 @@ public class Permission extends MyModel{
 
     public Permission() {
     }
+
+    @JoinTable(
+            joinColumns =
+            @JoinColumn(name = "permission_id", referencedColumnName = "id"),
+            inverseJoinColumns =
+            @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = {"permissions"})
+
+    private Set<Role> roles = new HashSet<>();
 
     public void setId(Long id){
         this.id = id;
@@ -29,6 +41,22 @@ public class Permission extends MyModel{
 
     public String getName(){
         return name;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void addRole(Role role) {
+        roles.add(role);
+    }
+
+    public void removeRole(Role role) {
+        roles.remove(role);
     }
 
     public Permission (Long id, String name){
