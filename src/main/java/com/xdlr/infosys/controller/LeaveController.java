@@ -11,7 +11,7 @@ import java.util.Date;
 public class LeaveController {
     @RequestMapping(value = "/leave")
     public ModelAndView leaveRequest(){return new ModelAndView("ask_for_leave");}
-    @RequestMapping(value = "/leave/apply/{leaveType}/{startDate}/{startTime}/{endDate}/{endTime}/{reason}")
+    @RequestMapping(value = "/leave_apply/{leaveType}/{startDate}/{startTime}/{endDate}/{endTime}/{reason}")
     public ModelAndView leaveApply(@PathVariable(value = "leaveType")String leaveType,
                                    @PathVariable(value = "startData") Date startDate,
                                    @PathVariable(value = "startTime")String startTime,
