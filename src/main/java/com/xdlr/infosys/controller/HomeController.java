@@ -21,4 +21,9 @@ public class HomeController {
     public ModelAndView askForLeave(){
         return new ModelAndView("ask_for_leave");
     }
+
+    @RequestMapping(value = "/process")
+    public ModelAndView process(){
+        return new ModelAndView("leave_approval");
+    }
 }
