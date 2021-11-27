@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>请假服务</title>
+    <title>请假审批</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link
@@ -43,7 +43,8 @@
         </symbol>
 
     </svg>
-    <div class="row">
+    <div class="row justify-content-center"><br><br><br><br><br></div>
+    <div class="row justify-content-center">
         <!--SideBars-->
         <div class="col-3 align-items-start">
             <div class="flex-column" style="width: 200px">
@@ -110,13 +111,12 @@
                 </div>
             </div>
         </div>
-
         <div class="col-9 justify-content-center">
             <div class="row">
                 <div class="col-1"></div>
                 <div class="flex-column col-8">
                     <form role="form" id="form" action="" method="post">
-                        <h2 align="center">请假表</h2>
+                        <h2 align="center">XXX请假表</h2>
                         <div class="form-group row">
                             <div class="col-2">
                                 <label for="leaveType" class="text-info col-form-label">
@@ -124,7 +124,7 @@
                                 </label>
                             </div>
                             <div class="col-10">
-                                <input name="leaveType" id="leaveType" type="text" class="form-control" required>
+                                <input name="leaveType" id="leaveType" type="text" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -134,11 +134,11 @@
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input name="startDate" id="startDate" type="date" class="form-control" required>
+                                <input name="startDate" id="startDate" type="date" class="form-control" readonly>
                             </div>
                             <div class="col-2"></div>
                             <div class="col-4">
-                                <input name="startTime" id="startTime" type="time" class="form-control" required>
+                                <input name="startTime" id="startTime" type="time" class="form-control" readonly>
                             </div>
 
                         </div>
@@ -149,11 +149,11 @@
                                 </label>
                             </div>
                             <div class="col-4">
-                                <input name="endDate" id="endDate" type="date" class="form-control" required>
+                                <input name="endDate" id="endDate" type="date" class="form-control" readonly>
                             </div>
                             <div class="col-2"></div>
                             <div class="col-4">
-                                <input name="endTime" id="endTime" type="time" class="form-control" required>
+                                <input name="endTime" id="endTime" type="time" class="form-control" readonly>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -163,14 +163,19 @@
                                 </label>
                             </div>
                             <div class="col-10">
-                                <input name="reason" id="reason" type="text" class="form-control" required
-                                    style="height: 100px">
+                                <input name="reason" id="reason" type="text" class="form-control" readonly
+                                       style="height: 100px">
                             </div>
                         </div>
                         <p></p>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-primary">确认请假</button>
+                            <div class="justify-content-center">
+                                <button type="submit" class="btn btn-primary ">同意请假</button>
+                                <button type="submit" class="btn btn-primary ">驳回请假</button>
+                                <button type="submit" class="btn btn-primary ">提交上级</button>
+                            </div>
                         </div>
+
                     </form>
                 </div>
                 <div class="col-3"></div>
