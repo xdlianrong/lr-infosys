@@ -2,3 +2,12 @@
 spring.datasource.url=
 spring.datasource.username=
 spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5Dialect
+spring.jpa.hibernate.ddl-auto=update
+
+#static resource
+spring.mvc.static-path-pattern=/static/**
+#logging
+logging.group.xdlr=com.xdlr.infosys
+logging.level.xdlr=DEBUG
+
