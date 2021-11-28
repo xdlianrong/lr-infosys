@@ -74,10 +74,11 @@ public class EmployeeService {
         return "添加关系完成";
     }
 
-    public Employee login(Long id, String password){
-        if(!employeeRepository.existsById(id)) return null;
+    public Boolean login(Long id, String password){
+        if(!employeeRepository.existsById(id)) return false;
+        logger.debug("user exists");
         Employee employee = employeeRepository.findFirstById(id);
-        if(employee.getPassword().equals(password)) return employee;
-        return null;
+        if(employee.getPassword().equals(password)) return true;
+        return false;
     }
 }

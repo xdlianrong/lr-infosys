@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 
-@RestController(value = "api/v0")
+@RestController(value = "/api/v0")
 public class LeaveController {
     @RequestMapping(value = "/leave")
     public ModelAndView leaveRequest(){return new ModelAndView("ask_for_leave");}
@@ -18,6 +18,9 @@ public class LeaveController {
                                    @PathVariable(value = "endData")Date endData,
                                    @PathVariable(value = "endTime")String endTime,
                                    @PathVariable(value = "reason")String reason){
+        /**
+         * TODO
+         */
 
         return  null;
     }

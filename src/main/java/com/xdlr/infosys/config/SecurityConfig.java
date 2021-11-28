@@ -13,7 +13,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/login")
-                .loginProcessingUrl("/login.do")
+                .loginProcessingUrl("/api/v0/login")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/login","/index")
