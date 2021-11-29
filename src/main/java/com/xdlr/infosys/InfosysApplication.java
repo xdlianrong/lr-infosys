@@ -1,6 +1,6 @@
 package com.xdlr.infosys;
 
-import com.xdlr.infosys.employee.MessageService;
+import com.xdlr.infosys.member.MessageService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

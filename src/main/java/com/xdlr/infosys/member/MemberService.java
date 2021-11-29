@@ -1,8 +1,8 @@
-package com.xdlr.infosys.employee;
+package com.xdlr.infosys.member;
 
 import com.xdlr.infosys.model.Member;
 import com.xdlr.infosys.model.Manage;
-import com.xdlr.infosys.repo.EmployeeRepository;
+import com.xdlr.infosys.repo.MemberRepository;
 import com.xdlr.infosys.repo.ManageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,13 +16,13 @@ import java.util.List;
 
 @Service
 @ResponseBody
-public class EmployeeService {
+public class MemberService {
     @Autowired
-    EmployeeRepository employeeRepository;
+    MemberRepository memberRepository;
     @Autowired
     ManageRepository manageRepository;
-    Logger logger = LoggerFactory.getLogger(EmployeeService.class);
-    public Member registerNewEmployee(String name, String phone, String email, String sex, String job, String department, String position, String identityNumber, String entryTime){
+    Logger logger = LoggerFactory.getLogger(MemberService.class);
+    public Member registerNewEmployee(String name, String phone, String email, String sex, String department, String position, String identityNumber, String entryTime){
         String password = identityNumber.substring(12);
 
         LocalDate birthday = LocalDate.of(Integer.parseInt(identityNumber.substring(6,10)),
@@ -34,8 +34,8 @@ public class EmployeeService {
                 Integer.parseInt(entryTime.substring(8,10)));
 
         Member employee = new Member(name,email, password, identityNumber, phone,
-                sex, job, department, position,birthday, entry);
-        return employeeRepository.save(employee);
+                sex, department, position,birthday, entry);
+        return memberRepository.save(employee);
     }
     public String addManage(Member addedEmployee){
         Long employeeId= addedEmployee.getId();
@@ -61,10 +61,10 @@ public class EmployeeService {
             Member manager;
             logger.debug("" + i);
             if(i == 1){
-                manager =  employeeRepository.findEmployeeByPosition("技术总监");
+                manager =  memberRepository.findEmployeeByPosition("技术总监");
             }else{
                 logger.debug(manageDepartment.get(i));
-                manager = employeeRepository.findEmployeeByDepartment(manageDepartment.get(i));
+                manager = memberRepository.findEmployeeByDepartment(manageDepartment.get(i));
             }
             Long managerId = manager.getId();
             String managerName = manager.getName();
@@ -75,9 +75,9 @@ public class EmployeeService {
     }
 
     public Boolean login(Long id, String password){
-        if(!employeeRepository.existsById(id)) return false;
+        if(!memberRepository.existsById(id)) return false;
         logger.debug("user exists");
-        Member employee = employeeRepository.findFirstById(id);
+        Member employee = memberRepository.findFirstById(id);
         if(employee.getPassword().equals(password)) return true;
         return false;
     }

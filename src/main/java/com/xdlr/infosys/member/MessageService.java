@@ -1,4 +1,4 @@
-package com.xdlr.infosys.employee;
+package com.xdlr.infosys.member;
 
 import com.xdlr.infosys.config.ApplicationContextProvider;
 import com.xdlr.infosys.model.LeaveInfo;

@@ -1,7 +1,7 @@
-package com.xdlr.infosys.employee;
+package com.xdlr.infosys.member;
 
 import com.xdlr.infosys.model.Member;
-import com.xdlr.infosys.repo.EmployeeRepository;
+import com.xdlr.infosys.repo.MemberRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,47 +14,47 @@ import java.util.List;
 @RestController
 @ResponseBody
 @RequestMapping("/api/v0")
-public class EmployeeController {
+public class MemberController {
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private MemberRepository memberRepository;
     @Autowired
-    private EmployeeService employeeService;
-    Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+    private MemberService memberService;
+    Logger logger = LoggerFactory.getLogger(MemberController.class);
 
-    @GetMapping("/employees")
+    @GetMapping("/members")
     public List<Member> getAllEmployees(){
-        return employeeRepository.findAll();
+        return memberRepository.findAll();
     }
 
-    @PostMapping("/employees")
+    @PostMapping("/members")
     public String createEmployee(String name, String phone,
                                    String email, String sex,
-                                   String job, String department,
+                                 String department,
                                    String position, String identityNumber,
                                    String entryTime){
         logger.debug("name is " + name);
         //why i return this object to front end
-        Member addedEmployee = employeeService.registerNewEmployee(name, phone, email, sex, job, department, position,identityNumber, entryTime);
-//        employeeService.addManage(addedEmployee);
+        Member addedEmployee = memberService.registerNewEmployee(name, phone, email, sex, department, position,identityNumber, entryTime);
+//        memberService.addManage(addedEmployee);
         return "添加用户完成";
     }
 
-    @GetMapping("/employees/{id}")
+    @GetMapping("/members/{id}")
     public ResponseEntity<Member> getEmployeeById(@PathVariable(value = "id") String id){
-        Member employee = employeeRepository.findFirstById(Long.parseLong(id));
-        return ResponseEntity.ok().body(employee);
+        Member member = memberRepository.findFirstById(Long.parseLong(id));
+        return ResponseEntity.ok().body(member);
     }
 
-    @DeleteMapping("/employees/{id}")
+    @DeleteMapping("/members/{id}")
     public ResponseEntity<Member> deleteEmployeeById(@PathVariable(value = "id") String id){
-        Member employee = employeeRepository.findFirstById(Long.parseLong(id));
-        employee.setDeleted(true);
-        return ResponseEntity.ok().body(employee);
+        Member member = memberRepository.findFirstById(Long.parseLong(id));
+        member.setDeleted(true);
+        return ResponseEntity.ok().body(member);
     }
 
-    @PostMapping("/employee/login")
+    @PostMapping("/member/login")
     public ModelAndView login(String id, String password){
-        if(employeeService.login(new Long(id), password) != null) return new ModelAndView("index");
+        if(memberService.login(new Long(id), password) != null) return new ModelAndView("index");
         else return new ModelAndView("error");
     }
 

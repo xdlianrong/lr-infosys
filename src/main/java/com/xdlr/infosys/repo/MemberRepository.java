@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface EmployeeRepository extends CrudRepository<Member,Integer> {
+public interface MemberRepository extends CrudRepository<Member,Integer> {
     List<Member> findAll();
     Member findFirstById(Long id);
     Boolean existsById(Long id);
