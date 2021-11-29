@@ -22,9 +22,7 @@
 - 12.通知公告：节假日放假安排，或公司召开会议安排（功能选项：发布通知、查看）
 
 ## 未完成的事项
-- 创建Role表、Permission表(王)
-- 更改注册时的逻辑，添加增加角色的功能(张)
-- 根据职位将Employee类进行更加详细的拆分，创建Manager类和CEO类(蔡)
+- 讨论请假的整个流程
 - 更改message表，将其分的更细致一些
 - 注册时是否要同时完成管理人员的添加
 - 注册后选择继续注册还是回到home页面
@@ -32,13 +30,13 @@
 - 为前端页面的工作、职位和部门添加select
 - 完成register页面和home页面的sidebars一致的问题
 - 根据register页面和home页面sidebars页面不一致的问题我们是不是可以考虑推出不同主题
-- 完成人事关系的数据关系的构建
-- 完成请假的后端逻辑
 
 ## 注意事项
-- 修改列的编码
+1. 修改列的编码
 ```
   alter table table change column column type character set utf8 collate utf8_unicode_ci not null default '';
   
   alter table employee change position position varchar(255) character set utf8 collate utf8_unicode_ci not null default '';
 ```
+
+2. 使用`data.sql`时需要确保数据库中表结构已经创建好

@@ -78,6 +78,7 @@ public class MemberService {
         if(!memberRepository.existsById(id)) return false;
         logger.debug("user exists");
         Member employee = memberRepository.findFirstById(id);
+        logger.debug("password from db is " + employee.getPassword());
         if(employee.getPassword().equals(password)) return true;
         return false;
     }
