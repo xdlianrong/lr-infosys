@@ -14,6 +14,9 @@ public class MessageService implements Runnable{
     private Thread t;
     private String threadName;
 
+    public MessageService() {
+    }
+
     public MessageService(String name) {
         threadName = name;
     }
@@ -31,5 +34,8 @@ public class MessageService implements Runnable{
             t = new Thread(this,threadName);
             t.start();
         }
+    }
+    public String saveLeaveInfo(LeaveInfo leaveInfo){
+        return null;
     }
 }
