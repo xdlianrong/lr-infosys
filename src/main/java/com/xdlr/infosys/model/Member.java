@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import java.time.LocalDate;
 
 @Entity
-public class Employee extends MyModel{
+public class Member extends MyModel{
     private String name;
     private String password;
     private String identityNumber;
@@ -18,9 +18,9 @@ public class Employee extends MyModel{
     private LocalDate entryTime;
     private LocalDate resignationTime;
 
-    public Employee() {}
+    public Member() {}
 
-    public Employee(String name,String email, String password, String identityNumber, String phone, String sex, String job, String department, String position, LocalDate birthday, LocalDate entryTime) {
+    public Member(String name, String email, String password, String identityNumber, String phone, String sex, String job, String department, String position, LocalDate birthday, LocalDate entryTime) {
         this.name = name;
         this.password = password;
         this.identityNumber = identityNumber;

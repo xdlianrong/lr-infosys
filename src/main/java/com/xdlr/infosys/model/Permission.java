@@ -24,7 +24,6 @@ public class Permission extends MyModel{
     )
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = {"permissions"})
-
     private Set<Role> roles = new HashSet<>();
 
     public void setId(Long id){

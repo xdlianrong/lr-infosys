@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@RestController(value = "/api/v0")
+@RestController
 public class ProcessController {
 
     Logger logger = LoggerFactory.getLogger(ProcessController.class);

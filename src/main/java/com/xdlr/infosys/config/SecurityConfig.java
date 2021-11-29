@@ -13,13 +13,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/login")
-                .loginProcessingUrl("/api/v0/login")
+                .loginProcessingUrl("/hcadsghfjhasgjfghbashjkhbnvajsdhuhjk/login")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/login","/index")
-                .permitAll()
-                .anyRequest()
-                .authenticated();
+                .permitAll();
+//                .anyRequest()
+//                .authenticated();
         http.csrf().disable();
     }
 }
