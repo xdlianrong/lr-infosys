@@ -1,7 +1,11 @@
 package com.xdlr.infosys.model;
 
-import javax.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Member extends MyModel{
@@ -11,22 +15,30 @@ public class Member extends MyModel{
     private String phone;
     private String email;
     private String sex;
-    private String job;
     private String department;
     private String position;
     private LocalDate birthday;
     private LocalDate entryTime;
     private LocalDate resignationTime;
+    @JsonIgnoreProperties(value = {"roles"})
+    @JoinTable(
+            name = "member_roles",
+            joinColumns =
+            @JoinColumn(name = "member_id", referencedColumnName = "id"),
+            inverseJoinColumns =
+            @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Role> roles = new HashSet<>();
 
     public Member() {}
 
-    public Member(String name, String email, String password, String identityNumber, String phone, String sex, String job, String department, String position, LocalDate birthday, LocalDate entryTime) {
+    public Member(String name, String email, String password, String identityNumber, String phone, String sex, String department, String position, LocalDate birthday, LocalDate entryTime) {
         this.name = name;
         this.password = password;
         this.identityNumber = identityNumber;
         this.phone = phone;
         this.sex = sex;
-        this.job = job;
         this.department = department;
         this.position = position;
         this.birthday = birthday;
@@ -58,10 +70,6 @@ public class Member extends MyModel{
         this.sex = sex;
     }
 
-    public void setJob(String job) {
-        this.job = job;
-    }
-
     public void setDepartment(String department) {
         this.department = department;
     }
@@ -80,10 +88,6 @@ public class Member extends MyModel{
 
     public String getSex() {
         return sex;
-    }
-
-    public String getJob() {
-        return job;
     }
 
     public String getDepartment() {
@@ -128,5 +132,21 @@ public class Member extends MyModel{
 
     public void setResignationTime(LocalDate resignationTime) {
         this.resignationTime = resignationTime;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void addRole(Role role){
+        roles.add(role);
+    }
+
+    public void removeRole(Role role){
+        roles.remove(role);
     }
 }

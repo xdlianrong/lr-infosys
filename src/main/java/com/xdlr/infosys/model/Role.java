@@ -14,12 +14,19 @@ public class Role extends MyModel{
     private Long id;
     private String name;
 
+    @JoinTable(
+            name = "role_permissions",
+            joinColumns =
+            @JoinColumn(name = "role_id", referencedColumnName = "id"),
+            inverseJoinColumns =
+            @JoinColumn(name = "permission_id", referencedColumnName = "id")
+    )
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = {"roles"})
+    private Set<Permission> permissions = new HashSet<>();
+
     public Role() {
     }
-
-    @JsonIgnoreProperties(value = {"roles"})
-    @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Permission> permissions = new HashSet<>();
 
     public void setId(Long id){
         this.id = id;
@@ -37,6 +44,11 @@ public class Role extends MyModel{
         return name;
     }
 
+    public Role (Long id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
     public Set<Permission> getPermissions() {
         return permissions;
     }
@@ -45,18 +57,11 @@ public class Role extends MyModel{
         this.permissions = permissions;
     }
 
-    public void addPermission(Permission permission) {
+    public void addPermission(Permission permission){
         permissions.add(permission);
     }
 
-    public void removePermission(Permission permission) {
+    public void removePermission(Permission permission){
         permissions.remove(permission);
     }
-
-    public Role (Long id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
-
 }
