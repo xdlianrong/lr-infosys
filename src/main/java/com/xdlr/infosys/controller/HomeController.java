@@ -26,4 +26,7 @@ public class HomeController {
     public ModelAndView process(){
         return new ModelAndView("leave_approval");
     }
+
+    @RequestMapping("/info")
+    public ModelAndView info() { return new ModelAndView("info"); }
 }

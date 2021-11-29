@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Date;
 
-@RestController(value = "/api/v0")
+@RestController
 public class LeaveController {
     @RequestMapping(value = "/leave")
     public ModelAndView leaveRequest(){return new ModelAndView("ask_for_leave");}
