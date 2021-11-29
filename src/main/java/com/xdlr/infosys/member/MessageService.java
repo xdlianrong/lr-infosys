@@ -35,7 +35,4 @@ public class MessageService implements Runnable{
             t.start();
         }
     }
-    public String saveLeaveInfo(LeaveInfo leaveInfo){
-        return null;
-    }
 }
