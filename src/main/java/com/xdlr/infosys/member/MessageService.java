@@ -5,12 +5,15 @@ import com.xdlr.infosys.model.LeaveInfo;
 import com.xdlr.infosys.repo.LeaveInfoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 /**
  * @author starsdeliever
  * @NOTICE 如果没有看懂这一个类文件，不建议对其进行修改
  */
+//@Service
 public class MessageService implements Runnable{
     LeaveInfoRepository leaveInfoRepository = ApplicationContextProvider.getBean(LeaveInfoRepository.class);
     Logger logger = LoggerFactory.getLogger(MessageService.class);

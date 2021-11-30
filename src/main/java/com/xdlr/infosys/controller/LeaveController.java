@@ -2,17 +2,17 @@ package com.xdlr.infosys.controller;
 
 import com.xdlr.infosys.member.MessageService;
 import com.xdlr.infosys.model.LeaveInfo;
-import com.xdlr.infosys.repo.LeaveInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @RestController
 public class LeaveController {
     @Autowired
-    LeaveInfoRepository leaveInfoRepository;
+//    MessageService messageService;
     @RequestMapping(value = "/leave")
     public ModelAndView leaveRequest(){return new ModelAndView("ask_for_leave");}
     @RequestMapping(value = "/leave_apply/{leaveType}/{startDate}/{startTime}/{endDate}/{endTime}/{reason}")
@@ -24,10 +24,6 @@ public class LeaveController {
                                    @PathVariable(value = "reason")String reason){
 
         LeaveInfo leaveInfo=new LeaveInfo();
-        /**
-         * TODO
-         */
-        leaveInfoRepository.save(leaveInfo);
 
         return  null;
     }
