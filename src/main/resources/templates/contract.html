@@ -2,61 +2,152 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>合同展示</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/sidebars.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
 
-    <style type="text/css">
-        #outer{
-            width: 560px;
-            margin: 50px auto;
-            background: bisque;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+    <title>合同展示</title>
 
 </head>
 
 <body>
-<div id="outer">
-    <p id="info">这是第几张图片</p>
-    <img src="../static/img/contract01.jpg" alt="图片加载失败" style="width: 500px;height: 600px">
-    <button id="prev" onclick='getProImg()'>上一张</button>
-    <button id="next" onclick="getNextImg()">下一张</button>
-</div>
-<script>
-    var index = 0;
-    var img = ["../static/img/contract01.jpg","../static/img/contract02.jpg","../static/img/contract03.jpg","../static/img/contract04.jpg"];
-    var imgObject;
-
-    window.onload = function () {/*当页面加载完成后再执行这部分js代码*/
-        imgObject = document.getElementsByTagName("img")[0];
-        var info = document.getElementById("info");
-        info.innerHTML = "合同展示: "+(index+1)+"/"+img.length;
-    }
-
-     function getNextImg() {
-        alert("1");
-        //var imgObject = document.getElementsByTagName("img")[0];
-        var info = document.getElementById("info");
-        index++;
-        if(index > img.length-1){  /*当图片已经翻到最后一张时，跳转到第一张图片*/
-            index = 0;
+<header>
+    <style type="text/css">
+        .contra {
+            background-image: url(../static/img/bg_5.JPG);
+            height: 100vh;
         }
-        imgObject.src = img[index];
-        info.innerHTML = "合同展示: "+(index+1)+"/"+img.length;
-    }
 
-    function getProImg() {
-        alert("1");//测试
-        // var imgObject = document.getElementsByTagName("img")[0];
-        var info = document.getElementById("info");
-        index--;
-        if(index < 0){            /*当图片已经翻到第1张时，跳转到最后一张图片*/
-            index =img.length - 1;
+        #intro {
+            background-image: url(../static/img/bg_5.JPG);
+            height: 100vh;
         }
-        imgObject.src = img[index];
-        info.innerHTML = "合同展示: "+(index+1)+"/"+img.length;
-    }
-</script>
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" target="_blank" href="https://www.lianrongtech.site/">
+                <strong>西电链融</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="https://www.lianrongtech.site/">合同展示</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10" style="height: 40px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <!-- Card1 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">合同1</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="/contract01" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card1 -->
+                    <div style="width: 60px"></div>
+                    <!-- Card2 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">合同2</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card2 -->
+                    <div style="width: 60px"></div>
+                    <!-- Card3 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">合同3</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card3 -->
+                    <div style="width: 60px"></div>
+                    <!-- Card4 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">合同4</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card4 -->
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
+<footer class="bg-light text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright: 西电链融
+        <a class="text-dark" href="https://www.miit.gov.cn/">备案号</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 </body>
 </html>

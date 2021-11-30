@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+    <title>合同1</title>
+</head>
+
+<body>
+    <style>
+     #outer{
+          width: 560px;
+           margin: 50px auto;
+           background: whitesmoke;
+           padding: 10px;
+           text-align: center;
+        }
+    </style>
+    <div style="margin: 20px">
+        <a href="/contract" class="btn btn-primary btn-block" style="width: 80px">返回</a>
+    </div>
+    <div id="outer">
+        <p id="info">这是第几张图片</p>
+        <img src="../static/img/contract01.jpg" alt="图片加载失败" style="width: 500px;height: 600px">
+        <button id="prev" onclick='getProImg()'>上一张</button>
+        <button id="next" onclick="getNextImg()">下一张</button>
+    </div>
+    <script>
+    var index = 0;
+    var img = ["../static/img/contract01.jpg","../static/img/contract02.jpg","../static/img/contract03.jpg","../static/img/contract04.jpg"];
+    var imgObject;
+
+    window.onload = function () {/*当页面加载完成后再执行这部分js代码*/
+        imgObject = document.getElementsByTagName("img")[0];
+        var info = document.getElementById("info");
+        info.innerHTML = "合同1展示: "+(index+1)+"/"+img.length;
+    }
+
+    function getNextImg() {
+        //alert("1");
+        //var imgObject = document.getElementsByTagName("img")[0];
+        var info = document.getElementById("info");
+        index++;
+        if(index > img.length-1){  /*当图片已经翻到最后一张时，跳转到第一张图片*/
+            index = 0;
+        }
+        imgObject.src = img[index];
+        info.innerHTML = "合同展示: "+(index+1)+"/"+img.length;
+    }
+
+    function getProImg() {
+        //alert("1");//测试
+        // var imgObject = document.getElementsByTagName("img")[0];
+        var info = document.getElementById("info");
+        index--;
+        if(index < 0){            /*当图片已经翻到第1张时，跳转到最后一张图片*/
+            index =img.length - 1;
+        }
+        imgObject.src = img[index];
+        info.innerHTML = "合同展示: "+(index+1)+"/"+img.length;
+    }
+</script>
+</body>
+</html>

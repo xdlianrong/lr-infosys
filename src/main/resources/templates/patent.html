@@ -2,9 +2,151 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/sidebars.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
+
     <title>专利展示</title>
 </head>
 <body>
-    <h1>专利展示</h1>
+<header>
+    <style type="text/css">
+        .contra {
+            background-image: url(../static/img/bg_5.JPG);
+            height: 100vh;
+        }
+
+        #intro {
+            background-image: url(../static/img/bg_5.JPG);
+            height: 100vh;
+        }
+
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" target="_blank" href="https://www.lianrongtech.site/">
+                <strong>西电链融</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="https://www.lianrongtech.site/">专利展示</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10" style="height: 40px"></div>
+                </div>
+                <div class="row">
+                    <div class="col-1"></div>
+                    <!-- Card1 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">专利1</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card1 -->
+                    <div style="width: 60px"></div>
+                    <!-- Card2 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">专利2</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card2 -->
+                    <div style="width: 60px"></div>
+                    <!-- Card3 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">专利3</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card3 -->
+                    <div style="width: 60px"></div>
+                    <!-- Card4 -->
+                    <div class="contra col-2 bg-image card align-items-center"
+                         style="height: 300px">
+                        <div class="card-body text-white justify-content-center">
+                            <div style="height: 30px"></div>
+                            <div>
+                                <h2 class="card-title">专利4</h2>
+                            </div>
+                            <div style="height: 100px"></div>
+                            <div>
+                                <a href="" class="btn btn-outline-light align-self-center">点击查看</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card4 -->
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
+<footer class="bg-light text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright: 西电链融
+        <a class="text-dark" href="https://www.miit.gov.cn/">备案号</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 </body>
 </html>
