@@ -5,7 +5,6 @@ import com.xdlr.infosys.model.LeaveInfo;
 import com.xdlr.infosys.repo.LeaveInfoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

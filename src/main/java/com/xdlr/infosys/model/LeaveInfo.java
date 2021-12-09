@@ -1,43 +1,32 @@
 package com.xdlr.infosys.model;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
 @Entity
 public class LeaveInfo extends MyModel{
+    Integer senderId;
+    Integer recieverId;
+    String type;
+    Date startDate;
+    String startTime;
+    Date endDate;
+    String endTime;
+    String reason;
 
-    private Integer senderId;
-    private String senderName;
-    private String sendTime;
-    private Integer receiverId;
-    private String receiverName;
-    private Boolean readed = false;
-
-    public String getSendTime() {
-        return sendTime;
+    public LeaveInfo() {
     }
 
-    public LeaveInfo(Integer senderId, String senderName, String sendTime, Integer receiverId, String receiverName, boolean readed) {
+    public LeaveInfo(Integer senderId, Integer recieverId, String type, Date startDate, String startTime, Date endDate, String endTime, String reason) {
         this.senderId = senderId;
-        this.senderName = senderName;
-        this.sendTime = sendTime;
-        this.receiverId = receiverId;
-        this.receiverName = receiverName;
-        this.readed = readed;
+        this.recieverId = recieverId;
+        this.type = type;
+        this.startDate = startDate;
+        this.startTime = startTime;
+        this.endDate = endDate;
+        this.endTime = endTime;
+        this.reason = reason;
     }
-
-    public void setSendTime(String sendTime) {
-        this.sendTime = sendTime;
-    }
-
-    public boolean isRead() {
-        return readed;
-    }
-
-    public void setRead(boolean readed) {
-        this.readed = readed;
-    }
-
-    public LeaveInfo(){}
 
     public Integer getSenderId() {
         return senderId;
@@ -47,27 +36,59 @@ public class LeaveInfo extends MyModel{
         this.senderId = senderId;
     }
 
-    public String getSenderName() {
-        return senderName;
+    public Integer getRecieverId() {
+        return recieverId;
     }
 
-    public void setSenderName(String senderName) {
-        this.senderName = senderName;
+    public void setRecieverId(Integer recieverId) {
+        this.recieverId = recieverId;
     }
 
-    public Integer getReceiverId() {
-        return receiverId;
+    public String getType() {
+        return type;
     }
 
-    public void setReceiverId(Integer receiverId) {
-        this.receiverId = receiverId;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getReceiverName() {
-        return receiverName;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setReceiverName(String receiverName) {
-        this.receiverName = receiverName;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 }
