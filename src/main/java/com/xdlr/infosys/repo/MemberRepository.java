@@ -10,4 +10,5 @@ public interface MemberRepository extends CrudRepository<Member,Integer> {
     Member findFirstById(Integer id);
     Member findEmployeeByPosition(String position);
     Member findEmployeeByDepartment(String department);
+    Member findFirstByIdAndIsDeleted(Integer id, Boolean deleted);
 }

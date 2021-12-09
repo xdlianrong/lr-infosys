@@ -25,7 +25,7 @@ INSERT INTO permission values (5,false,"雇员");
 
 -- INSERT INTO administrator values (7,false,"市场总监");
 
-INSERT INTO member values (1,false,"2000-10-11","技术部","zhangxiaorui@gmail.com","2000-10-11","111111200010111111","寄星","111111","17653532570","实习生",null,"男");
+INSERT INTO member values (1,false,"2000-10-11","技术部","zhangxiaorui@gmail.com","2000-10-11","111111200010111111","寄星","$2a$10$XH93GcODxgusdxsdS1vI2u8SAIu04d.T/R0FllYd/8UcnlLOA.ZFq","17653532570","实习生",null,"男");
 
 /*
  向role-permissions表中插入数据

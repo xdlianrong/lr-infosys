@@ -7,6 +7,7 @@ import com.xdlr.infosys.repo.ManageRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -18,12 +19,15 @@ import java.util.List;
 @ResponseBody
 public class MemberService {
     @Autowired
+    PasswordEncoder passwordEncoder;
+    @Autowired
     MemberRepository memberRepository;
     @Autowired
     ManageRepository manageRepository;
     Logger logger = LoggerFactory.getLogger(MemberService.class);
     public Member registerNewEmployee(String name, String phone, String email, String sex, String department, String position, String identityNumber, String entryTime){
         String password = identityNumber.substring(12);
+        password = passwordEncoder.encode(password);
 
         LocalDate birthday = LocalDate.of(Integer.parseInt(identityNumber.substring(6,10)),
                 Integer.parseInt(identityNumber.substring(10,12)),
