@@ -5,10 +5,10 @@ import javax.persistence.Entity;
 @Entity
 public class LeaveInfo extends MyModel{
 
-    private Long senderId;
+    private Integer senderId;
     private String senderName;
     private String sendTime;
-    private Long receiverId;
+    private Integer receiverId;
     private String receiverName;
     private Boolean readed = false;
 
@@ -16,7 +16,7 @@ public class LeaveInfo extends MyModel{
         return sendTime;
     }
 
-    public LeaveInfo(Long senderId, String senderName, String sendTime, Long receiverId, String receiverName, boolean readed) {
+    public LeaveInfo(Integer senderId, String senderName, String sendTime, Integer receiverId, String receiverName, boolean readed) {
         this.senderId = senderId;
         this.senderName = senderName;
         this.sendTime = sendTime;
@@ -39,11 +39,11 @@ public class LeaveInfo extends MyModel{
 
     public LeaveInfo(){}
 
-    public Long getSenderId() {
+    public Integer getSenderId() {
         return senderId;
     }
 
-    public void setSenderId(Long senderId) {
+    public void setSenderId(Integer senderId) {
         this.senderId = senderId;
     }
 
@@ -55,11 +55,11 @@ public class LeaveInfo extends MyModel{
         this.senderName = senderName;
     }
 
-    public Long getReceiverId() {
+    public Integer getReceiverId() {
         return receiverId;
     }
 
-    public void setReceiverId(Long receiverId) {
+    public void setReceiverId(Integer receiverId) {
         this.receiverId = receiverId;
     }
 

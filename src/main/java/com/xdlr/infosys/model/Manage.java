@@ -5,24 +5,24 @@ import javax.persistence.Entity;
 @Entity
 public class Manage extends MyModel{
 
-    private Long employeeId;
+    private Integer employeeId;
     private String employeeName;
-    private Long managerId;
+    private Integer managerId;
     private String managerName;
 
     public Manage(){}
-    public Manage(Long employeeId, String employeeName,Long managerId, String managerName){
+    public Manage(Integer employeeId, String employeeName,Integer managerId, String managerName){
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.managerId = managerId;
         this.managerName = managerName;
     }
 
-    public Long getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(Long employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -34,11 +34,11 @@ public class Manage extends MyModel{
         this.employeeName = employeeName;
     }
 
-    public Long getManagerId() {
+    public Integer getManagerId() {
         return managerId;
     }
 
-    public void setManagerId(Long managerId) {
+    public void setManagerId(Integer managerId) {
         this.managerId = managerId;
     }
 

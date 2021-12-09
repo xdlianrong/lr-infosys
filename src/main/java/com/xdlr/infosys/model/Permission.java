@@ -10,17 +10,17 @@ import java.util.Set;
 public class Permission extends MyModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
 
     public Permission() {
     }
 
-    public void setId(Long id){
+    public void setId(Integer id){
         this.id = id;
     }
 
-    public Long getId(){
+    public Integer getId(){
         return id;
     }
 
@@ -32,7 +32,7 @@ public class Permission extends MyModel{
         return name;
     }
 
-    public Permission (Long id, String name){
+    public Permission (Integer id, String name){
         this.id = id;
         this.name = name;
     }

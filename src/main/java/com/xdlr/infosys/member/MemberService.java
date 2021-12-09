@@ -38,7 +38,7 @@ public class MemberService {
         return memberRepository.save(employee);
     }
     public String addManage(Member addedEmployee){
-        Long employeeId= addedEmployee.getId();
+        Integer employeeId= addedEmployee.getId();
         String employeeName = addedEmployee.getName();
         List<String> manageDepartment = new ArrayList<>();
 
@@ -66,7 +66,7 @@ public class MemberService {
                 logger.debug(manageDepartment.get(i));
                 manager = memberRepository.findEmployeeByDepartment(manageDepartment.get(i));
             }
-            Long managerId = manager.getId();
+            Integer managerId = manager.getId();
             String managerName = manager.getName();
             Manage manage = new Manage(employeeId,employeeName,managerId,managerName);
             manageRepository.save(manage);
@@ -74,7 +74,7 @@ public class MemberService {
         return "添加关系完成";
     }
 
-    public Boolean login(Long id, String password){
+    public Boolean login(Integer id, String password){
         if(!memberRepository.existsById(id)) return false;
         logger.debug("user exists");
         Member employee = memberRepository.findFirstById(id);

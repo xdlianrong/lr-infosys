@@ -7,8 +7,7 @@ import java.util.List;
 
 public interface MemberRepository extends CrudRepository<Member,Integer> {
     List<Member> findAll();
-    Member findFirstById(Long id);
-    Boolean existsById(Long id);
+    Member findFirstById(Integer id);
     Member findEmployeeByPosition(String position);
     Member findEmployeeByDepartment(String department);
 }

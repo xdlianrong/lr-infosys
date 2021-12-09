@@ -21,7 +21,7 @@ public class LoginController {
 
 
     @PostMapping("/api/v0/login")
-    public Boolean login(@RequestParam Long id, @RequestParam String password){
+    public Boolean login(@RequestParam Integer id, @RequestParam String password){
         logger.debug("input password is " + password);
         if(memberService.login(id, password)){
             return true;

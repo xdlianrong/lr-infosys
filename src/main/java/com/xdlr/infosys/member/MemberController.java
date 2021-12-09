@@ -41,20 +41,20 @@ public class MemberController {
 
     @GetMapping("/members/{id}")
     public ResponseEntity<Member> getEmployeeById(@PathVariable(value = "id") String id){
-        Member member = memberRepository.findFirstById(Long.parseLong(id));
+        Member member = memberRepository.findFirstById(Integer.parseInt(id));
         return ResponseEntity.ok().body(member);
     }
 
     @DeleteMapping("/members/{id}")
     public ResponseEntity<Member> deleteEmployeeById(@PathVariable(value = "id") String id){
-        Member member = memberRepository.findFirstById(Long.parseLong(id));
+        Member member = memberRepository.findFirstById(Integer.parseInt(id));
         member.setDeleted(true);
         return ResponseEntity.ok().body(member);
     }
 
     @PostMapping("/member/login")
     public ModelAndView login(String id, String password){
-        if(memberService.login(new Long(id), password) != null) return new ModelAndView("index");
+        if(memberService.login(new Integer(id), password) != null) return new ModelAndView("index");
         else return new ModelAndView("error");
     }
 

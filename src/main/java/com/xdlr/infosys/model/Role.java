@@ -11,7 +11,7 @@ public class Role extends MyModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
 
     @JoinTable(
@@ -28,11 +28,11 @@ public class Role extends MyModel{
     public Role() {
     }
 
-    public void setId(Long id){
+    public void setId(Integer id){
         this.id = id;
     }
 
-    public Long getId(){
+    public Integer getId(){
         return id;
     }
 
@@ -44,7 +44,7 @@ public class Role extends MyModel{
         return name;
     }
 
-    public Role (Long id, String name){
+    public Role (Integer id, String name){
         this.id = id;
         this.name = name;
     }
