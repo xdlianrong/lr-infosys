@@ -13,6 +13,7 @@ public class LeaveInfo extends MyModel{
     Date endDate;
     String endTime;
     String reason;
+    Boolean readed;
 
     public LeaveInfo() {
     }
@@ -26,6 +27,7 @@ public class LeaveInfo extends MyModel{
         this.endDate = endDate;
         this.endTime = endTime;
         this.reason = reason;
+        this.readed = false;
     }
 
     public Integer getSenderId() {
@@ -90,5 +92,13 @@ public class LeaveInfo extends MyModel{
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public Boolean getReaded() {
+        return readed;
+    }
+
+    public void setReaded(Boolean readed) {
+        this.readed = readed;
     }
 }
